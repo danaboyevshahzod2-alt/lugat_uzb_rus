@@ -8,13 +8,11 @@ lugat = {
 
 
 while True:
-    print('agar inglizcha lug\'at qoshishni xohlasangiz 1 raqamini bosing')
-    print('agar ruscha lug\'at qoshishni xohlasangiz 2 raqamini bosing')
-    print('agar sizga uzbekcha sozning inglizchasi,'
-          ' \nkerak bolyaptima lug\'atingizdagi 3 raqamini bosing')
-    print('agar sizga uzbekcha sozning ruschasi,'
-          ' \nkerak bolyaptima lug\'atingizdagi 4 raqamini bosing')
-    print('bu dasturni toxtatingni xohlasangiz 5 ni bosing')
+    print('1 inglizcha lug\'at qoshish  ')
+    print('2 ruscha lug\'at qoshish')
+    print('3 tarjima uzb/eng')
+    print('4 tarjima uzb/rus')
+    print('5 dasturdan chiqish')
     tanlov=int(input('birini tanlang iltimos '))
     if tanlov==1:
        a=input('inglizcha soz kiriting')
