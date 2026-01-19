@@ -1,36 +1,58 @@
 lugat = {
     "быть": "bo‘lmoq",
     "мочь": "qodir bo‘lmoq",
-    "скаэать": "aytmoq"
+    "скаэать": "aytmoq",
+    'apple':'olma'
 }
 
+
+
 while True:
-    print("\n1. So‘zni tarjima qilish")
-    print("2. Yangi so‘z qo‘shish")
-    print("3. Chiqish")
+    print('agar inglizcha lug\'at qoshishni xohlasangiz 1 raqamini bosing')
+    print('agar ruscha lug\'at qoshishni xohlasangiz 2 raqamini bosing')
+    print('agar sizga uzbekcha sozning inglizchasi,'
+          ' \nkerak bolyaptima lug\'atingizdagi 3 raqamini bosing')
+    print('agar sizga uzbekcha sozning ruschasi,'
+          ' \nkerak bolyaptima lug\'atingizdagi 4 raqamini bosing')
+    print('bu dasturni toxtatingni xohlasangiz 5 ni bosing')
+    tanlov=int(input('birini tanlang iltimos '))
+    if tanlov==1:
+       a=input('inglizcha soz kiriting')
+       b=input('uzbekcha tarjimasini kiriting')
 
-    tanlov = input("Tanlang (1/2/3): ")
-
-    if tanlov == "1":
-        a = input("So'zni kiriting: ")
-        if a in lugat:
-            print(f"Tarjimasi: {lugat[a]}")
-        elif a in lugat.values():
-            for k, v in lugat.items():
-                if v == a:
-                    print(f"Ruscha: {k}")
+       if  a not in lugat and b not in lugat.values():
+           lugat[a]=b
+           print(f"So‘z qo‘shildi: {a} -> {b}")
+       else:
+            print("Bu so‘z lugatda mavjud!")
+    elif tanlov==2:
+        ruscha=input('ruscha soz kiriting')
+        tarjima=input('uzbekcha tarjimasi')
+        if ruscha not in lugat and tarjima not in lugat.values():
+            lugat[ruscha] = tarjima
+            print(f"So‘z qo‘shildi: {ruscha} -> {tarjima}")
         else:
-            print("Bunday so‘z yo‘q")
-
-    elif tanlov == "2":
-        ruscha = input("Ruscha so‘z: ")
-        uzbekcha = input("O‘zbekcha tarjimasi: ")
-        lugat[ruscha] = uzbekcha
-        print(f"So‘z qo‘shildi: {ruscha} -> {uzbekcha}")
-
-    elif tanlov == "3":
-        print("Dastur yakunlandi")
+            print("Bu so‘z lugatda mavjud!")
+    elif tanlov==3:
+        uzbekcha=input('siz xohlagan uzbekcha soz kiriting')
+        topildi=False
+        for i,v in lugat.items():
+            if uzbekcha==v:
+                print(f"Tarjimalari: {i}")
+                topildi=True
+        if not topildi:
+            print('Bunday soz yo‘q sizning lugatingizda')
+    elif tanlov==4:
+        uzb_soz=input('ozbekcha soz kiring men sizga ruschasini '
+                      '\nchiqarib beraman lugatingizdagi')
+        topildi = False
+        for i,v in lugat.items():
+            if uzb_soz==v:
+                print(f"Tarjimalari: {i}")
+        if not topildi:
+            print('Bunday soz yo‘q sizning lugatingizda')
+    elif tanlov==5:
+        print('dastur yakunlandi')
         break
-
     else:
-        print("Noto‘g‘ri tanlov")
+        print('natogri tanlov')
